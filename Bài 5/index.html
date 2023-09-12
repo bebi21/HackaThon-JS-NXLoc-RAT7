@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function reverse(inputString) {
+        var words = inputString.split(" ");
+        var reversedWords = [];
+        for (var i = 0; i < words.length; i++) {
+          var word = words[i];
+          var reversedWord = "";
+          for (var j = word.length - 1; j >= 0; j--) {
+            reversedWord += word[j];
+          }
+          reversedWords.push(reversedWord);
+        }
+        return reversedWords.join(" ");
+      }
+      var userInput = prompt("Nhập chuỗi:");
+      var result = reverse(userInput);
+      console.log(result);
+    </script>
+  </body>
+</html>

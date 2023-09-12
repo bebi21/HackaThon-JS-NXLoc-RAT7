@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function remove(inputString) {
+        var numericString = "";
+        for (var i = 0; i < inputString.length; i++) {
+          var char = inputString[i];
+
+          if (!isNaN(char) && char !== " ") {
+            numericString += char;
+          }
+        }
+        return numericString;
+      }
+      var userInput = prompt("Nhập chuỗi gồm kí tự và số:");
+      var result = remove(userInput);
+      console.log(result);
+    </script>
+  </body>
+</html>

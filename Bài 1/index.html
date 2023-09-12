@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function find(input) {
+        let numbers = input.split(" ").map(Number);
+        let uniqueNum = new Set(numbers);
+        let largestNumber = -1;
+        for (let num of uniqueNum) {
+          if (numbers.filter((n) => n === num).length === 1) {
+            if (num > largestNumber) {
+              largestNumber = num;
+            }
+          }
+        }
+        return largestNumber;
+      }
+      let a = prompt("nhập vào số nguyên bất kì cách nhau bằng dấu  space");
+      let result = find(a);
+      console.log(result);
+    </script>
+  </body>
+</html>
