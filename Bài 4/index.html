@@ -8,18 +8,17 @@
   <body>
     <script>
       function remove(inputString) {
-        var numericString = "";
-        for (var i = 0; i < inputString.length; i++) {
-          var char = inputString[i];
-
-          if (!isNaN(char) && char !== " ") {
+        let numericString = "";
+        for (let i = 0; i < inputString.length; i++) {
+          let char = inputString[i];
+          if (isNaN(char) && char !== " ") {
             numericString += char;
           }
         }
         return numericString;
       }
-      var userInput = prompt("Nhập chuỗi gồm kí tự và số:");
-      var result = remove(userInput);
+      let userInput = prompt("Nhập chuỗi gồm kí tự và số:");
+      let result = remove(userInput);
       console.log(result);
     </script>
   </body>

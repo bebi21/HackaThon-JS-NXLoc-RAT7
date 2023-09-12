@@ -8,20 +8,20 @@
   <body>
     <script>
       function reverse(inputString) {
-        var words = inputString.split(" ");
-        var reversedWords = [];
-        for (var i = 0; i < words.length; i++) {
-          var word = words[i];
-          var reversedWord = "";
-          for (var j = word.length - 1; j >= 0; j--) {
+        let words = inputString.split(" ");
+        let reversedWords = [];
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+          let reversedWord = "";
+          for (let j = word.length - 1; j >= 0; j--) {
             reversedWord += word[j];
           }
           reversedWords.push(reversedWord);
         }
         return reversedWords.join(" ");
       }
-      var userInput = prompt("Nhập chuỗi:");
-      var result = reverse(userInput);
+      let userInput = prompt("Nhập chuỗi:");
+      let result = reverse(userInput);
       console.log(result);
     </script>
   </body>

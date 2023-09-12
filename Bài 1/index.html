@@ -7,21 +7,28 @@
   </head>
   <body>
     <script>
-      function find(input) {
+      function findNumber(input) {
         let numbers = input.split(" ").map(Number);
-        let uniqueNum = new Set(numbers);
+        let uniqueNumbers = {};
+        for (let num of numbers) {
+          if (uniqueNumbers[num]) {
+            uniqueNumbers[num]++;
+          } else {
+            uniqueNumbers[num] = 1;
+          }
+        }
         let largestNumber = -1;
-        for (let num of uniqueNum) {
-          if (numbers.filter((n) => n === num).length === 1) {
-            if (num > largestNumber) {
-              largestNumber = num;
-            }
+        for (let num in uniqueNumbers) {
+          if (uniqueNumbers[num] === 1 && num > largestNumber) {
+            largestNumber = num;
           }
         }
         return largestNumber;
       }
-      let a = prompt("nhập vào số nguyên bất kì cách nhau bằng dấu  space");
-      let result = find(a);
+      let numberInteger = prompt(
+        "nhập vào số nguyên bất kì cách nhau bằng dấu  space"
+      );
+      let result = findNumber(numberInteger);
       console.log(result);
     </script>
   </body>
